@@ -1,3 +1,0 @@
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Verify analyze/test green and no forbidden patterns before calling the fix done"}
-{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Check Settings tile and notification tap routing follow view conventions"}
-{"file": ".trellis/spec/guides/git-workflow.md", "reason": "Branch/commit/merge rules for landing feature/foreground-notifications back into develop"}

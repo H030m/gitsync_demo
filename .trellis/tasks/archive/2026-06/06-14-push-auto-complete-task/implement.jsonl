@@ -1,6 +1,0 @@
-{"_example": "Fill with {\"file\": \"<path>\", \"reason\": \"<why>\"}. Put spec/research files only — no code paths. Run `python .trellis/scripts/get_context.py --mode packages` to list available specs. Delete this line once real entries are added."}
-{"file": ".trellis/spec/backend/index.md", "reason": "後端 spec 入口 + pre-dev checklist"}
-{"file": ".trellis/spec/backend/directory-structure.md", "reason": "新增 tool/trigger 檔案的擺放慣例"}
-{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Firestore trigger/set(merge)/交易/幂等寫法"}
-{"file": ".trellis/spec/backend/error-handling.md", "reason": "agent/OpenAI best-effort、不可讓 trigger 崩潰"}
-{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "trigger 結構化 log 慣例"}

@@ -1,2 +1,0 @@
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Verify flutter test + flutter build web green; no analyze run."}
-{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Verify AppConfig.fcmVapidKey follows the BACKEND / TARGET pattern; no new pubspec entries."}

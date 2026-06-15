@@ -1,3 +1,0 @@
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "flutter build web is the truth signal; analyze skipped on CJK path."}
-{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Project conventions for service-level imports + AppConfig env-var pattern (mirror BACKEND / TARGET style for FCM_VAPID_KEY)."}
-{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "Web SW + AppConfig + push_messaging.dart touch three layers; verify the data contract (web config mirror, vapidKey plumbing, kIsWeb branch) is consistent."}

@@ -1,8 +1,0 @@
-{"file": "docs/AI_AGENT_RULES.md", "reason": "§4 self-check list + RED LINEs the review must enforce (no auto-commit/deploy, English code, no over-engineering, 5-field report)"}
-{"file": "docs/ARCHITECTURE.md", "reason": "Verify compliance: Firestore paths under apps/gitsync/, region asia-east1, idempotency, §7 rewritten model matches code"}
-{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Backend quality bar: v2-only, region, forbidden patterns, never-deploy — check new functions against it"}
-{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Verify Firestore rules (fetchRequests/discordDigests write:false), paths, transaction/idempotency correctness"}
-{"file": ".trellis/spec/backend/error-handling.md", "reason": "Verify HttpsError usage, shared-secret auth, error-swallow boundaries on new handlers"}
-{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "jest/ts-jest conventions + boundary mocking — verify unit tests for parse/digest added"}
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "flutter analyze 0-warning bar, forbidden deps, never-commit — check the Flutter refresh button changes"}
-{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Verify async+mounted guards, theme usage, provider listen:false in callbacks on the refresh UI"}

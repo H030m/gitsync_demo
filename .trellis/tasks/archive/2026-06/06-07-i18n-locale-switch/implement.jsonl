@@ -1,2 +1,0 @@
-{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "View-layer rules + (new) i18n convention: context.l10n / AppStrings / LocaleNotifier"}
-{"file": ".trellis/spec/frontend/state-management.md", "reason": "LocaleNotifier is a ChangeNotifier provided at app root (like ThemeModeNotifier)"}

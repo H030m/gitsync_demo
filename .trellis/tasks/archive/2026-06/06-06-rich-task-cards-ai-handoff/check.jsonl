@@ -1,5 +1,0 @@
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "flutter analyze, forbidden deps, never-commit rules — verify slices 1 & 2"}
-{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Functions build/lint quality bar — verify slices 3 & 4"}
-{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "How functions unit tests are written — generateHandoff + issue-assignee sync need tests"}
-{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "Check cross-layer data-flow consistency (callable↔handler↔flow, model↔Fake)"}
-{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Check the detail UI against View-layer rules (no repo import, colorScheme, mounted guards)"}

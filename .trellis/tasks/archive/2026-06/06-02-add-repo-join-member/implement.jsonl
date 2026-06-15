@@ -1,5 +1,0 @@
-{"file": ".trellis/spec/backend/directory-structure.md", "reason": "Change stays in handlers/addRepo.ts (onCall handler layer); no new file needed."}
-{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Path convention for members/{uid}, users/{uid}/repos/{repoId}; use FieldValue.arrayUnion for memberIds (concurrency-safe re-entrant join); serverTimestamp for lastActiveAt; do not overwrite existing repo fields (webhookSecret/createdBy)."}
-{"file": ".trellis/spec/backend/error-handling.md", "reason": "Keep HttpsError codes: failed-precondition for missing token / no push-admin; not-found for missing repo; the join path must be idempotent (no already-exists throw). Webhook stays best-effort and is skipped on join."}
-{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "v2-only, region, no forbidden patterns; preserve existing addRepo structure/secrets."}
-{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Reuse the existing step 1-2 token/access verification for both create and join paths; reuse the member-doc shape already written in the create branch — don't diverge field names."}

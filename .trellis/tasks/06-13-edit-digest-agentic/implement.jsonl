@@ -1,8 +1,0 @@
-{"file": "functions/src/flows/editDiscordDigest.ts", "reason": "Rewrite as an agentic tool loop (searchDiscordMessages scoped to the digest's day / getDaySummary -> writeDigest), accept plain-content as terminal, empty write keeps existing markdown, runId trace; lock + not-found gates unchanged"}
-{"file": "functions/src/prompts/editDiscordDigest.ts", "reason": "Agentic system prompt + seed builder (date + current summary + instruction); drop the old single-shot user builder"}
-{"file": "functions/src/handlers/editDiscordDigest.ts", "reason": "Accept + validate runId; forward to the flow"}
-{"file": "functions/src/handlers/botEditDigest.ts", "reason": "Unchanged — bot bridge calls the flow without runId, so trace is a no-op on that path"}
-{"file": "functions/src/tools/discordSearch.ts", "reason": "Reuse searchDiscordMessages (with day range) + getDaySummary for evidence (no change)"}
-{"file": "functions/src/__tests__/editDiscordDigest.test.ts", "reason": "Scripted tool-loop OpenAI mock; mock discordSearch; add Timestamp to firestore mock; add a test asserting the agent pulls the day's messages before rewriting"}
-{"file": "lib/view_models/discord_messages_vm.dart", "reason": "Mix in AgentTraceMixin; newRunId('editdigest-'), beginTrace, pass runId in editDigest(), endTrace in finally; dispose tears it down"}
-{"file": "lib/views/daily/daily_view_page.dart", "reason": "Digest card shows AskRepoLiveTraceStrip(vm.liveSteps) under the adjust field while editing"}

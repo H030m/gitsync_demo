@@ -1,5 +1,0 @@
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Verify flutter test + flutter build web green; no analyze run."}
-{"file": ".trellis/spec/frontend/state-management.md", "reason": "Verify the module-level _ShellNavSignal is documented as deliberate (not slipped in), and that no view subscribes to it (it's a navigation-time signal only)."}
-{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Verify the new transitions module is the only source of truth — no inline duplicate sharedAxisSlide bodies in app_router.dart."}
-{"file": ".trellis/tasks/06-13-revert-animatedswitcher-bottom-nav-swap-globalkey-duplication-crash/prd.md", "reason": "Verify no shell-level AnimatedSwitcher / KeyedSubtree pattern reappears anywhere; the architectural constraint is permanent for this codebase."}
-{"file": ".trellis/tasks/06-13-ui-polish-smoother-and-more-polished-transition-animations/prd.md", "reason": "Verify the visual contract is matched (±0.06 offset, AppMotion.nav, emphasized) so users don't perceive the rewrite as a regression."}

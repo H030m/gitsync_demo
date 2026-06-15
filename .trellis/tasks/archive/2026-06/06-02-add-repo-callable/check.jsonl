@@ -1,4 +1,0 @@
-{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "v2-only, region pin, forbidden patterns, never-deploy rules to verify against"}
-{"file": ".trellis/spec/backend/error-handling.md", "reason": "verify HttpsError codes + best-effort try/catch pattern are correct"}
-{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "verify apps/gitsync/ paths, WriteBatch atomicity, serverTimestamp, no root-collection writes"}
-{"file": ".trellis/spec/guides/git-workflow.md", "reason": "commit convention for Phase 3.4"}

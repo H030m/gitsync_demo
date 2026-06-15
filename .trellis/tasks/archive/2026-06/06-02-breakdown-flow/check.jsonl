@@ -1,5 +1,0 @@
-{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "jest + ts-jest boundary-mocking for onCall flows: mock OpenAI + Firestore, test happy path / index->taskId translation / cycle re-prompt."}
-{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Verify v2-only, region, no forbidden patterns, structured-output usage."}
-{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Verify task docs written to correct path with correct shape, transaction usage, no read-before-write on counters."}
-{"file": ".trellis/spec/backend/error-handling.md", "reason": "Verify HttpsError codes and that the flow does NOT touch isBreakingDown (handler owns the lock)."}
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Verify the setState fix and input-box change follow Flutter conventions; analyze/test green."}

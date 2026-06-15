@@ -1,3 +1,0 @@
-{"file": ".trellis/tasks/06-05-fix-getcommitgraph-502-lighten-graphql-query/prd.md", "reason": "bug root cause + fix requirements"}
-{"file": ".trellis/spec/backend/error-handling.md", "reason": "callable error mapping conventions"}
-{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "boundary-mock test conventions"}

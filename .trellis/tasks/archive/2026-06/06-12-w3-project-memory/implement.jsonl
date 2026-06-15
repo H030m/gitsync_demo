@@ -1,6 +1,0 @@
-{"file": ".trellis/spec/backend/index.md", "reason": "Backend overview: tools/ vs flows/ vs prompts/ split — where projectBrief tool + prompt + flow wiring belong"}
-{"file": ".trellis/spec/backend/directory-structure.md", "reason": "Confirm new tools/projectBrief.ts + prompts/projectBrief.ts placement and the tool-helper (no onCall wrapper) convention"}
-{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "apps/gitsync/ path convention, serverTimestamp, set(merge:true) vs update() for possibly-absent users doc, meta/ singleton (no index/rules)"}
-{"file": ".trellis/spec/backend/error-handling.md", "reason": "best-effort try/catch + logger.warn pattern (Rule D): mergeProjectBrief / mergeLearnedTags never throw and never fail the host flow"}
-{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "structured firebase-functions logger for the best-effort warn logs in both new helpers"}
-{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "boundary-mock jest style (fake Firestore + scripted getOpenAI) for the new projectBrief.test.ts and the assignTask/summarizeDay/breakdownTask extensions"}

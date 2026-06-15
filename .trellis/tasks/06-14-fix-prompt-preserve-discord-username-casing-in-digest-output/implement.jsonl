@@ -1,3 +1,0 @@
-{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Confirms v2 patterns + lint conventions for the prompt-file edits."}
-{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "Jest patterns — needed to know if any existing prompt-snapshot test exists in functions/src/__tests__/ that would need updating."}
-{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Pre-modification rule: confirms the username-preservation rule shouldn't be DRY'd into a shared constant for two callsites — adds more abstraction than the fix earns."}

@@ -1,3 +1,0 @@
-{"file": ".trellis/spec/frontend/state-management.md", "reason": "Verify _disposed guard pattern matches the project's ChangeNotifier conventions; no parallel state-management primitive introduced."}
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Verify flutter test + flutter build web stay green relative to baseline."}
-{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Verify _safeNotify is a single private helper, not a copy-paste; no shared mixin was prematurely extracted."}

@@ -1,5 +1,0 @@
-{"file": ".trellis/tasks/06-04-fix-commit-range-query-contributions-names-real-branch-graph/prd.md", "reason": "Acceptance criteria checklist to verify against"}
-{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Backend quality bar: lint, typecheck, vitest"}
-{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "Test conventions for new callable + computeContributions changes"}
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Flutter quality bar: analyze, test"}
-{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "Logging conventions for the new flow"}

@@ -1,4 +1,0 @@
-{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Widget structure conventions for the new Graph tab widget (StatelessWidget/Consumer, node card composition)."}
-{"file": ".trellis/spec/frontend/state-management.md", "reason": "Reading vm.tasks via Consumer<TasksBoardViewModel>; no new state needed, just derive the graph from the VM."}
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Flutter conventions: mounted guards, theme colors over hardcoded hex, navigation via NavigationService."}
-{"file": ".trellis/spec/frontend/directory-structure.md", "reason": "Where view widgets live; keep the graph tab in lib/views/tasks/ consistent with the rest."}

@@ -1,4 +1,0 @@
-{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "View conventions: theme via ColorScheme, async+mounted, navigation via NavigationService, scrolling rules"}
-{"file": ".trellis/spec/frontend/directory-structure.md", "reason": "Where views/widgets live in the MVVM layout"}
-{"file": ".trellis/spec/frontend/state-management.md", "reason": "Consumer/Provider.of usage when calling TasksBoardViewModel.updateStatus"}
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Zero-warning analyze bar, no new deps, l10n string pattern"}

@@ -1,4 +1,0 @@
-{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "View/widget rules: never hardcode colors (use colorScheme/textTheme), spacing/radius tokens per ARCHITECTURE §8.2, graphview conventions, scope discipline"}
-{"file": ".trellis/spec/frontend/state-management.md", "reason": "provider + ChangeNotifier patterns; theme selector reads ThemeModeNotifier via Consumer/Provider.of"}
-{"file": ".trellis/spec/frontend/directory-structure.md", "reason": "where theme tokens and view files live in the lib/ MVVM layout"}
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "forbidden deps, never-commit, quality bar for the styling pass"}

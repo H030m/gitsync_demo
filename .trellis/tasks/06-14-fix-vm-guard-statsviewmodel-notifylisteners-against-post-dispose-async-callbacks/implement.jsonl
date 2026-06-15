@@ -1,4 +1,0 @@
-{"file": ".trellis/spec/frontend/state-management.md", "reason": "Establishes the project's ChangeNotifier conventions; the _disposed guard pattern must respect existing notifier lifecycle."}
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "flutter build web is the truth signal; analyze skipped on CJK path."}
-{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Pre-modification rule: confirms a one-file _safeNotify is fine here; a shared mixin earns its place only if the pattern recurs in three or more VMs."}
-{"file": ".trellis/tasks/06-13-replace-shell-page-swap-with-customtransitionpage-at-gorouter-level/prd.md", "reason": "Context: the route change that unmasked this latent VM bug. Helps the sub-agent understand why the fix lives in the VM and not in the router."}

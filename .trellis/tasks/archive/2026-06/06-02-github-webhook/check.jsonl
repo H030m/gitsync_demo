@@ -1,5 +1,0 @@
-{"file": ".trellis/spec/backend/error-handling.md", "reason": "Verify webhook verify-first ordering, correct HTTP codes (401/200-dup), Rule D ordering, best-effort issue mirror."}
-{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Verify raw-only writes in webhook, transaction + increment in onPRMerged, idempotent in-txn read, vector field usage, correct paths."}
-{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Verify v2/region, no inline secrets/models, every trigger calls markIdempotent first, structured-output/embedding via config."}
-{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "Verify boundary-mock coverage: signature pass/fail, dup, push/PR/issue writes, onPRMerged marks done once, onCommitCreated parse+enrich, onIssueWritten reverse sync."}
-{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "Verify logger usage, no console.*."}

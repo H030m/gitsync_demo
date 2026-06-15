@@ -1,3 +1,0 @@
-{"file": ".trellis/spec/backend/directory-structure.md", "reason": "where triggers/handlers/services go; index.ts re-export; githubClient is the single GitHub API home"}
-{"file": ".trellis/spec/backend/error-handling.md", "reason": "trigger idempotency + Rule D best-effort external calls (close issue must not throw into the trigger)"}
-{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Rule C/D/D.1 idempotency + trigger conventions"}

@@ -1,2 +1,0 @@
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "verify no forbidden deps added, quality bar; gate is build/run not analyze (CJK path)"}
-{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "verify no hardcoded colors, theme/colorScheme usage, scope discipline, graphview conventions"}

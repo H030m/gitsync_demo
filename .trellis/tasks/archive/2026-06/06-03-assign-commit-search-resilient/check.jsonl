@@ -1,3 +1,0 @@
-{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "Boundary-mock: make the fake findNearest throw FAILED_PRECONDITION -> assert searchMemberCommits returns [] (no throw); assert assignTaskFlow still finalizes an assignment when commit search fails."}
-{"file": ".trellis/spec/backend/error-handling.md", "reason": "Verify the catch scope is around the query only, logs at warn, returns [] — and that no other assignTaskFlow path can be broken by a thrown search."}
-{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Verify firestore.indexes.json commits vector indexes are queryScope COLLECTION matching the .collection() query; prefilter fields (repoId, author.login) intact."}

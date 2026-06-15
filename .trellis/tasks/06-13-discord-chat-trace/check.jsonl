@@ -1,3 +1,0 @@
-{"file": ".trellis/tasks/06-13-discord-chat-trace/prd.md", "reason": "Acceptance — live trace shows during a discord question; behavior otherwise unchanged"}
-{"file": "functions/src/__tests__/discordChat.test.ts", "reason": "Handler test green (mocks the flow); runId absent path unaffected — functions jest 322/322"}
-{"file": "lib/views/daily/daily_view_page.dart", "reason": "flutter test 98/98 (daily_discord_tab / discord_digest etc.); analyze clean"}

@@ -1,3 +1,0 @@
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Verify analyze/test green incl. replacing the 2 pre-existing red kanban tests"}
-{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Check section list follows view/theme/navigation conventions in light+dark"}
-{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "Confirm the change stays in the View layer (no VM/repo changes needed)"}

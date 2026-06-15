@@ -1,98 +1,41 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cloud_functions/cloud_functions.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
-import 'config/app_config.dart';
-import 'firebase_options.dart';
-import 'l10n/app_locale.dart';
-import 'services/authentication.dart';
-import 'services/functions_service.dart';
-import 'services/locale_notifier.dart';
-import 'services/navigation.dart';
-import 'services/push_messaging.dart';
-import 'services/theme_mode_notifier.dart';
+import 'data/mock_store.dart';
+import 'router/app_router.dart';
+import 'services/auth_service.dart';
+import 'services/registration_service.dart';
 import 'theme/app_theme.dart';
-import 'view_models/auth_vm.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  // Fake-backend mode skips Firebase entirely so the app boots on a fresh
-  // clone with no `flutterfire configure` run yet.
-  if (!AppConfig.useFakeBackend) {
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-    if (AppConfig.useEmulator) {
-      _useEmulators();
-    }
-  } else {
-    debugPrint(
-      '[GitSync] Running in FAKE backend mode '
-      '(AppConfig.backend = ${AppConfig.backend.name}). '
-      'No Firebase / OpenAI / GitHub calls will be made.',
-    );
-  }
-  runApp(const GitSyncApp());
+void main() {
+  // In-memory data store seeded with demo events (no Firebase needed to run).
+  final store = MockStore.seeded();
+  runApp(CampusEventsApp(store: store));
 }
 
-// Routes Firestore / Auth / Functions to the local Firebase Emulator Suite.
-// Ports match firebase.json (firestore 8080, auth 9099, functions 5001). The
-// Functions instance must be the same region [FunctionsService] talks to
-// (asia-east1), or the override won't apply to the app's callables.
-void _useEmulators() {
-  final host = AppConfig.emulatorHost;
-  FirebaseFirestore.instance.useFirestoreEmulator(host, 8080);
-  FirebaseAuth.instance.useAuthEmulator(host, 9099);
-  FirebaseFunctions.instanceFor(region: 'asia-east1')
-      .useFunctionsEmulator(host, 5001);
-  debugPrint(
-    '[GitSync] Using Firebase emulators at $host '
-    '(firestore:8080, auth:9099, functions:5001)',
-  );
-}
+class CampusEventsApp extends StatelessWidget {
+  const CampusEventsApp({super.key, required this.store});
 
-class GitSyncApp extends StatelessWidget {
-  const GitSyncApp({super.key});
+  final MockStore store;
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        // Services (singletons; do not need ChangeNotifier).
-        Provider<AuthenticationService>(create: (_) => AuthenticationService()),
-        Provider<NavigationService>(create: (_) => NavigationService()),
-        Provider<FunctionsService>(create: (_) => FunctionsService()),
-        Provider<PushMessagingService>(create: (_) => PushMessagingService()),
-        // Global ChangeNotifiers.
-        ChangeNotifierProvider<ThemeModeNotifier>(
-          create: (_) => ThemeModeNotifier(),
-        ),
-        ChangeNotifierProvider<LocaleNotifier>(create: (_) => LocaleNotifier()),
-        ChangeNotifierProvider<AuthViewModel>(create: (_) => AuthViewModel()),
+        Provider<MockStore>.value(value: store),
+        ChangeNotifierProvider(create: (_) => ThemeController()),
+        ChangeNotifierProvider(create: (_) => AuthService(store)),
+        ChangeNotifierProvider(create: (_) => RegistrationService(store)),
       ],
-      child: Consumer2<ThemeModeNotifier, LocaleNotifier>(
-        builder: (ctx, themeMode, localeNotifier, _) {
-          final nav = Provider.of<NavigationService>(ctx, listen: false);
-          return MaterialApp.router(
-            title: 'GitSync',
-            theme: lightTheme,
-            darkTheme: darkTheme,
-            themeMode: themeMode.mode,
-            locale: localeNotifier.locale.locale,
-            supportedLocales: const [Locale('en'), Locale('zh', 'TW')],
-            localizationsDelegates: const [
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            routerConfig: nav.router,
-            debugShowCheckedModeBanner: false,
-          );
-        },
+      child: Consumer<ThemeController>(
+        builder: (context, theme, _) => MaterialApp.router(
+          title: '校園活動報名系統',
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme.light(),
+          darkTheme: AppTheme.dark(),
+          themeMode: theme.mode,
+          routerConfig: appRouter,
+        ),
       ),
     );
   }

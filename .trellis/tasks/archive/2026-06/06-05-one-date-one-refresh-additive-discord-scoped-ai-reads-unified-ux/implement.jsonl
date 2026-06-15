@@ -1,5 +1,0 @@
-{"file": ".trellis/tasks/06-05-one-date-one-refresh-additive-discord-scoped-ai-reads-unified-ux/prd.md", "reason": "D1-D5 decisions, AC, technical notes"}
-{"file": ".trellis/spec/backend/error-handling.md", "reason": "callable validation conventions"}
-{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "boundary-mock tests"}
-{"file": ".trellis/spec/frontend/state-management.md", "reason": "VM conventions"}
-{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "widget conventions"}

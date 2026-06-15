@@ -1,3 +1,0 @@
-{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Keeps the change aligned with the centralized motion / theme conventions established in the prior task."}
-{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Confirms flutter build web is the truth signal; flutter analyze is skipped intentionally on this repo's CJK path."}
-{"file": ".trellis/tasks/06-13-ui-polish-smoother-and-more-polished-transition-animations/prd.md", "reason": "Establishes the contract this fix preserves: shared-axis horizontal slide, fixed ±0.06 offset, indicator timing lock — the fix must NOT change any of these."}

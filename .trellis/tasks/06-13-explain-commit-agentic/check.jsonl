@@ -1,3 +1,0 @@
-{"file": ".trellis/tasks/06-13-explain-commit-agentic/prd.md", "reason": "Acceptance — agentic loop, Discord retrieval, cache + GitHub fallback preserved, live trace"}
-{"file": "functions/src/__tests__/explainCommit.test.ts", "reason": "All cases green incl. cache hit / GitHub fallback / agentic retrieval / empty-write -> internal — functions jest 322/322"}
-{"file": "lib/views/daily/daily_view_page.dart", "reason": "flutter analyze clean; flutter test 98/98 (commits_vm_test, commits_tree_test)"}
