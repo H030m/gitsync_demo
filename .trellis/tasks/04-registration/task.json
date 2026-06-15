@@ -1,0 +1,27 @@
+{
+  "id": "registration",
+  "name": "registration",
+  "title": "實作報名功能（報名 / 取消）",
+  "description": "登入後的使用者可在活動詳情頁報名或取消，含名額與重複報名檢查。",
+  "status": "done",
+  "dev_type": "feature",
+  "scope": "frontend",
+  "package": null,
+  "priority": "P1",
+  "creator": "demo",
+  "assignee": "全端",
+  "createdAt": "2026-06-15",
+  "completedAt": "2026-06-15",
+  "branch": null,
+  "base_branch": "main",
+  "subtasks": [],
+  "children": [],
+  "parent": null,
+  "relatedFiles": [
+    "lib/services/registration_service.dart",
+    "lib/views/events/event_detail_page.dart"
+  ],
+  "dependsOn": ["auth", "event-list"],
+  "notes": "",
+  "meta": {}
+}
