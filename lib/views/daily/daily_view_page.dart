@@ -3396,3 +3396,5 @@ class _ChatInputBar extends StatelessWidget {
     );
   }
 }
+
+// [feat] 進度表：顯示每個人當前認領且尚未完成的任務進度。
