@@ -812,3 +812,5 @@ class _AssigneeCircle extends StatelessWidget {
     );
   }
 }
+
+// [feat] 任務看板：依狀態分欄（TODO / 進行中 / 完成），支援拖拉換狀態與即時同步。
