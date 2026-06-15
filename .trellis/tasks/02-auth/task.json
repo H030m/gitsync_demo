@@ -1,0 +1,27 @@
+{
+  "id": "auth",
+  "name": "auth",
+  "title": "實作使用者註冊 / 登入",
+  "description": "提供註冊、登入、登出，並對外暴露目前登入的使用者。",
+  "status": "done",
+  "dev_type": "feature",
+  "scope": "frontend",
+  "package": null,
+  "priority": "P1",
+  "creator": "demo",
+  "assignee": "後端",
+  "createdAt": "2026-06-15",
+  "completedAt": "2026-06-15",
+  "branch": null,
+  "base_branch": "main",
+  "subtasks": [],
+  "children": [],
+  "parent": null,
+  "relatedFiles": [
+    "lib/services/auth_service.dart",
+    "lib/views/auth/login_page.dart"
+  ],
+  "dependsOn": [],
+  "notes": "",
+  "meta": {}
+}
