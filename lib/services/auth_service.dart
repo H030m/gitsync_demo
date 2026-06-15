@@ -45,3 +45,5 @@ class AuthService extends ChangeNotifier {
     notifyListeners();
   }
 }
+
+// signUp / login / logout 完整實作，含目前使用者狀態保存。
