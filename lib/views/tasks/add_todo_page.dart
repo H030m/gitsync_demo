@@ -581,3 +581,5 @@ class _AssigneePicker extends StatelessWidget {
     return m.userId;
   }
 }
+
+// [feat] 新增任務：點擊懸浮加號 → 輸入 markdown 描述 → 由 AI 生成任務。
