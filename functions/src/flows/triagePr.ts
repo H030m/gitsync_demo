@@ -11,6 +11,10 @@
 // committers (recency-weighted by GitHub's default newest-first ordering). It
 // is deliberately NOT the existing `searchMemberCommits()` (which is semantic
 // over commit messages by a *given* author — the wrong direction).
+//
+// The flow returns exactly TWO reviewers: the top-tallied historical committers
+// mapped back to repo members via readTeamState; ties broken by most-recent
+// touch. The persisting trigger writes these onto pullRequests/{n}.
 import { logger } from 'firebase-functions/v2';
 
 import { db } from '../admin';
