@@ -1,0 +1,26 @@
+{
+  "id": "my-registrations",
+  "name": "my-registrations",
+  "title": "建立「我的報名」管理頁",
+  "description": "顯示目前使用者已報名的活動清單，並可快速取消。",
+  "status": "done",
+  "dev_type": "feature",
+  "scope": "frontend",
+  "package": null,
+  "priority": "P2",
+  "creator": "demo",
+  "assignee": "前端",
+  "createdAt": "2026-06-15",
+  "completedAt": "2026-06-15",
+  "branch": null,
+  "base_branch": "main",
+  "subtasks": [],
+  "children": [],
+  "parent": null,
+  "relatedFiles": [
+    "lib/views/registrations/my_registrations_page.dart"
+  ],
+  "dependsOn": ["registration"],
+  "notes": "",
+  "meta": {}
+}
