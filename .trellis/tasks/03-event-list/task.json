@@ -1,0 +1,27 @@
+{
+  "id": "event-list",
+  "name": "event-list",
+  "title": "開發活動列表與詳情頁",
+  "description": "從資料層拉取活動，列表呈現，點擊進入單一活動詳情。",
+  "status": "done",
+  "dev_type": "feature",
+  "scope": "frontend",
+  "package": null,
+  "priority": "P1",
+  "creator": "demo",
+  "assignee": "前端",
+  "createdAt": "2026-06-15",
+  "completedAt": "2026-06-15",
+  "branch": null,
+  "base_branch": "main",
+  "subtasks": [],
+  "children": [],
+  "parent": null,
+  "relatedFiles": [
+    "lib/views/events/event_list_page.dart",
+    "lib/views/events/event_detail_page.dart"
+  ],
+  "dependsOn": ["backend-api"],
+  "notes": "",
+  "meta": {}
+}
