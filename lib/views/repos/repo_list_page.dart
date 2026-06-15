@@ -269,3 +269,5 @@ class RepoListPage extends StatelessWidget {
 }
 
 // [feat] 選擇 repo：輸入 GitHub 網址 → 驗證 → 新增並追蹤該 repo，寫入 repos 清單並可切換當前 repo。
+
+// [feat] 選擇 repo：輸入 GitHub 網址 → 驗證 → 新增並追蹤該 repo，寫入 repos 清單並可切換當前 repo。
