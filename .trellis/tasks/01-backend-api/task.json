@@ -1,0 +1,29 @@
+{
+  "id": "backend-api",
+  "name": "backend-api",
+  "title": "建立後端資料模型與 API（活動、報名）",
+  "description": "定義 Event / Registration / AppUser 資料模型，並提供讀寫資料層（目前為記憶體 MockStore，之後可替換 Firestore）。",
+  "status": "done",
+  "dev_type": "feature",
+  "scope": "data",
+  "package": null,
+  "priority": "P1",
+  "creator": "demo",
+  "assignee": "後端",
+  "createdAt": "2026-06-15",
+  "completedAt": "2026-06-15",
+  "branch": null,
+  "base_branch": "main",
+  "subtasks": [],
+  "children": [],
+  "parent": null,
+  "relatedFiles": [
+    "lib/models/event.dart",
+    "lib/models/registration.dart",
+    "lib/models/app_user.dart",
+    "lib/data/mock_store.dart"
+  ],
+  "dependsOn": [],
+  "notes": "",
+  "meta": {}
+}
