@@ -1,0 +1,16 @@
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "verify firebase-functions/v2 only, asia-east1 region pin, onCall auth gate, no deploy/secrets/index changes"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "verify HttpsError codes (failed-precondition/invalid-argument) + best-effort try/catch never-throw on agentTrace + wrapped tools"}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "verify apps/gitsync/ paths for agentRuns, serverTimestamp usage, arrayUnion one-write-per-round, no root-collection writes, no new composite index"}
+{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "verify boundary-mock jest style; 310/310 green (288 baseline + 22 new); existing generateHandoff suite unchanged"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "verify VM cancels StreamSubscription in dispose + finally, constructor-injected repos with factory defaults, no material.dart import"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "verify colorScheme-only styling (light+dark), AppDimens tokens, l10n via context.l10n, Fake impl added for BACKEND=fake, scope discipline"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "verify tolerant fromMap (null-safe), no dynamic leakage from repos, Map<String,dynamic>.from at callable/Firestore boundary"}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "verify runId contract end-to-end: client-gen → callable input → backend agentRuns doc → client stream; AskRepoReply shape matches AskRepoResult"}
+{"file": "docs/AI_AGENT_RULES.md", "reason": "verify §4 self-check: analyze 0 new issues, no print/TODO, light+dark, no new deps, no plugin-registrant files committed"}
+{"file": "functions/src/flows/askRepo.ts", "reason": "verify tool loop, days clamp [1,92] default 30, sha+snippetKey dedupe first-seen, projectBrief prefix, trace cadence (one appendStep/round), error→finishRun('error') rethrow"}
+{"file": "functions/src/tools/agentTrace.ts", "reason": "verify never-throw best-effort, runId path-injection guard ([A-Za-z0-9_-], <=200), no-op on missing/invalid runId, one batch write per round"}
+{"file": "functions/src/flows/generateHandoff.ts", "reason": "verify trace insertion points only (startRun after cache check, appendStep per tool batch + review verdict, finishRun on finalize); host control flow + result shape unchanged"}
+{"file": "lib/view_models/ask_repo_vm.dart", "reason": "verify ask() lifecycle, per-ask runId, trace subscribe-while-waiting then fire-and-forget cancel, mirrors DailyBriefChatViewModel"}
+{"file": "lib/views/ask/ask_repo_sheet.dart", "reason": "verify turns render, live trace strip while sending, commit+discord source panels, light+dark via colorScheme"}
+{"file": "test/ask_repo_sheet_test.dart", "reason": "verify widget test: trace-then-answer+sources, new-session clears, dark-mode smoke; no main.dart import (firebase_options baseline avoided)"}
+{"file": "test/ask_repo_vm_test.dart", "reason": "verify VM unit test: ask() lifecycle + distinct runId per ask used for callable and trace stream"}

@@ -1,0 +1,2 @@
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Verify lint + typecheck conventions still hold; the new rule is a plain markdown line in a string literal."}
+{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "Verify any existing prompt-snapshot tests are updated (and a snapshot test wasn't accidentally added)."}

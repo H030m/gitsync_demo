@@ -1,0 +1,8 @@
+{"file": ".trellis/spec/backend/directory-structure.md", "reason": "Where flows/ vs handlers/ vs prompts/ live; the flow body goes in flows/breakdownTask.ts and must follow the layer split."}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Firestore path convention (apps/gitsync/repos/{repoId}/tasks/{taskId}), pre-generating doc IDs, transactional batch write for Step 4-6."}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "HttpsError codes (invalid-argument/internal), best-effort pattern, Rule D (mark idempotency before slow OpenAI call) — flow must not mask the handler's lock release."}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "v2-only, region asia-east1, forbidden patterns; OpenAI structured-output via parse + zodResponseFormat."}
+{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "Use firebase-functions structured logger for the flow steps."}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "StatefulWidget setState rules — root cause of the add_todo button bug (onChanged not calling setState)."}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Documents the setState gotcha and Flutter input/UI conventions for the input-box change."}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "Data flows backend BreakdownTaskResult -> SubTask.fromMap; keep dependsOn string[] contract consistent across the layer boundary."}

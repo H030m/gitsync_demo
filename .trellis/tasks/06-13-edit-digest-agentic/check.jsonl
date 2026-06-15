@@ -1,0 +1,3 @@
+{"file": ".trellis/tasks/06-13-edit-digest-agentic/prd.md", "reason": "Acceptance — agentic loop, evidence retrieval, lock semantics kept, bot path still works, live trace"}
+{"file": "functions/src/__tests__/editDiscordDigest.test.ts", "reason": "not-found / locked / rewrite+merge / agentic-retrieval all green — functions jest 322/322"}
+{"file": "lib/views/daily/daily_view_page.dart", "reason": "flutter analyze clean; flutter test 98/98 (discord_digest_test, daily_discord_tab_test)"}

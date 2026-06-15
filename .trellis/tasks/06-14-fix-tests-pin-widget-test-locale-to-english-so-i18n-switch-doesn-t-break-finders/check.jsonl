@@ -1,0 +1,2 @@
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Verify whole flutter test suite + flutter build web green; no edits leaked under lib/."}
+{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "If a shared pumpWithLocale helper was added, verify it's the single source of truth and not copy-pasted across files."}

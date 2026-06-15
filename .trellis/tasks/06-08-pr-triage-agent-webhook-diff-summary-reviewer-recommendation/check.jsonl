@@ -1,0 +1,7 @@
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Verify v2 syntax, region, no forbidden patterns, no console.* logging in the new code."}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Verify Firestore writes use the correct apps/gitsync/repos/{repoId}/pullRequests/{n} path, idempotency check honored, type-strict queries on the users collection."}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "Verify webhook HMAC + x-github-delivery idempotency reused, and the new flow swallows Discord/LLM errors without losing the Firestore write."}
+{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "Verify new tests follow the project's jest/ts-jest + nock + getOpenAI mock pattern."}
+{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "Verify all new logging goes through firebase-functions structured logger."}
+{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Verify no duplicate Discord/GitHub helpers were created; tools/discordNotify.ts and services/githubClient.ts are reused."}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "Triage data crosses webhook → flow → Firestore → Discord — verify the data contract is consistent at every layer (especially the pullRequests/{n} schema additions)."}

@@ -1,0 +1,4 @@
+{"file": ".trellis/spec/frontend/directory-structure.md", "reason": "Where services (push_messaging, local_notifications) and views (settings) live in the lib/ MVVM layout"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Widget/view conventions for the Settings notification tile; theme + async/mounted rules"}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "flutter analyze zero-warning bar, forbidden deps, never-commit list"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "Service wiring via provider; how services are registered and consumed"}

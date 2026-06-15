@@ -1,0 +1,7 @@
+{"file": ".trellis/spec/backend/directory-structure.md", "reason": "Confirms where flow code lives (functions/src/flows/) — only triagePr.ts is touched; no new file needed."}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Firestore range query patterns for the new recentTriageLoad helper (where('triagedAt','>',Date) + order + limit). Confirms composite-index conventions and the no-'!=' rule."}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "v2 syntax, region, no console.log — applies to any new logger calls in the workload helper."}
+{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "Use firebase-functions structured logger for the new helper's degrade-on-failure paths."}
+{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "Jest + ts-jest patterns for extending __tests__/triagePr.test.ts and __tests__/onPullRequestOpened.test.ts without touching their mock harness shape."}
+{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Before adding a new helper module, search-first habit — confirms whether recentTriageLoad belongs in triagePr.ts or warrants a tools/ extract."}
+{"file": ".trellis/tasks/06-08-pr-triage-agent-webhook-diff-summary-reviewer-recommendation/prd.md", "reason": "Original triage agent PRD — establishes the scoring contract being modified and the persisted doc schema this task extends."}

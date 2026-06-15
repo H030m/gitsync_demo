@@ -1,0 +1,4 @@
+{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "jest + ts-jest boundary-mock (mock githubClient verifyRepoAccess/registerWebhook + Firestore). Cases: new repo unchanged; existing repo + non-member + push/admin -> joins as member (3 writes, arrayUnion); existing + already-member -> idempotent no extra write; existing + no push/admin -> still rejected; join path does NOT call registerWebhook."}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Verify members/{uid} + users/{uid}/repos/{repoId} paths, memberIds arrayUnion, no overwrite of existing repo doc fields, serverTimestamp usage."}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "Verify HttpsError codes preserved, join is idempotent (no already-exists), permission check runs on the join path too."}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Verify v2-only, region, no forbidden patterns, existing behavior for the create path untouched."}

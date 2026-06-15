@@ -1,0 +1,21 @@
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "AskRepoViewModel pattern: ChangeNotifier, constructor-injected repos with factory defaults, cancel StreamSubscription in dispose, no material.dart import"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "AskRepoSheet: Consumer<VM> in build, colorScheme-only styling (light+dark), AppDimens tokens, l10n via context.l10n, modal sheet conventions"}
+{"file": "docs/AI_AGENT_RULES.md", "reason": "MVVM 5-layer boundaries, no new deps, asia-east1 region, onCall auth gate, best-effort never-throw (Rule D), commit-message format"}
+{"file": "functions/src/flows/dailyBriefChat.ts", "reason": "skeleton to clone/extend for askRepo: round loop, history<=8, projectBrief prefix, sha dedupe, forced final answer"}
+{"file": "functions/src/flows/discordChat.ts", "reason": "snippetKey() dedupe rule (channelId:firstId:lastId) reused for askRepo Discord snippet collection"}
+{"file": "functions/src/flows/generateHandoff.ts", "reason": "W1-touched host flow — locate Phase-1 tool-batch + review-verdict insertion points for best-effort trace (no control-flow change)"}
+{"file": "functions/src/tools/dailyIntel.ts", "reason": "listRangeCommits/listRangeCompletedTasks/listRangeDigests/searchPastCommits signatures + best-effort behavior for the askRepo tool table"}
+{"file": "functions/src/tools/discordSearch.ts", "reason": "searchDiscordMessages + DiscordSnippet shape for the Discord source collection"}
+{"file": "functions/src/tools/assignTools.ts", "reason": "getTaskDependents/readTeamState signatures (NOT best-effort → wrapped in askRepo) for the unified tool set"}
+{"file": "functions/src/tools/projectBrief.ts", "reason": "readProjectBrief + formatBriefForPrompt stable-prefix pattern (empty → '' byte-identical) reused as askRepo system prefix"}
+{"file": "functions/src/handlers/discordChat.ts", "reason": "onCall handler template: region/secrets/timeout, auth gate, input validation — mirrored for handlers/askRepo.ts"}
+{"file": "functions/src/__tests__/dailyBriefChat.test.ts", "reason": "boundary-mock test style (fake Firestore + scripted OpenAI) mirrored for askRepo.test.ts"}
+{"file": "functions/src/__tests__/generateHandoff.test.ts", "reason": "existing assertions to keep green; agentTrace mock added without changing host expectations"}
+{"file": "lib/view_models/daily_brief_vm.dart", "reason": "DailyBriefChatViewModel to mirror: turns/sending/error/ask()/newSession() lifecycle"}
+{"file": "lib/services/functions_service.dart", "reason": "abstract FunctionsService + _LiveFunctionsService callable pattern ('endDate': ?x spread) to add askRepo"}
+{"file": "lib/services/fake/fake_functions_service.dart", "reason": "fake keyword-match dailyBrief/discordChat pattern reused for fake askRepo (canned answer + commit/discord sources)"}
+{"file": "lib/repositories/daily_report_repo.dart", "reason": "abstract repo + Firestore .snapshots().map() stream pattern + fake factory split for AgentRunRepository"}
+{"file": "lib/views/daily/daily_view_page.dart", "reason": "_BriefTurnView / _BriefSourcesPanel / _BriefInputBar widgets to mirror for AskRepoSheet bubbles + source panels (light+dark safe)"}
+{"file": "lib/router/app_router.dart", "reason": "ShellRoute MultiProvider — where to register the shared AskRepoViewModel so the FAB+sheet on every tab read one transcript"}
+{"file": "lib/views/shell/repo_shell.dart", "reason": "RepoShell Scaffold — where to hang the global FAB (all tabs)"}
+{"file": "lib/l10n/app_strings.dart", "reason": "AppStrings _(en,zh) getter pattern for askRepo* strings; zhHant fallback behavior used in widget tests"}

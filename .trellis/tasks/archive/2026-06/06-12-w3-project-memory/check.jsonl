@@ -1,0 +1,5 @@
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "v2-only, region pin, forbidden patterns, never-deploy/never-commit rules to verify the new code against"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "verify best-effort isolation: mergeProjectBrief + mergeLearnedTags swallow all errors, summarizeDay/assignTask still complete"}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "verify apps/gitsync/ paths, meta/projectBrief singleton, set(merge:true) on users doc, no new index/rules"}
+{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "verify the new/extended tests follow boundary-mock conventions and assert the cache-prefix + cap + best-effort behaviors"}
+{"file": ".trellis/spec/guides/git-workflow.md", "reason": "commit convention + branch (feat/w3-project-memory, no push) for the two scoped commits"}

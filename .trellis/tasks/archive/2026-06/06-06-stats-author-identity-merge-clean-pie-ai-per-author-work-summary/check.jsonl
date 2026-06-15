@@ -1,0 +1,4 @@
+{"file": ".trellis/tasks/06-06-stats-author-identity-merge-clean-pie-ai-per-author-work-summary/prd.md", "reason": "D1-D3 + AC"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "callable conventions"}
+{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "test conventions"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "VM conventions"}

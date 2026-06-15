@@ -1,0 +1,6 @@
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "Verify v2 syntax/region untouched and no console.* in the new code."}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Verify the recentTriageLoad query uses indexed predicates (triagedAt '>') and respects the LOAD_RECENT_PR_CAP limit."}
+{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "Verify any logger calls are structured + best-effort (fall back to empty load on failure, never throw)."}
+{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "Verify new tests stick to the boundary-mock pattern used by the existing triagePr/onPullRequestOpened suites."}
+{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Verify pickReviewers wasn't forked into duplicate scoring code — the rewrite stays single-source."}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "The new recommendedReviewerScores field is a backend→Firestore contract — verify nothing else (kanban / feed UI) was broken by an additive write."}

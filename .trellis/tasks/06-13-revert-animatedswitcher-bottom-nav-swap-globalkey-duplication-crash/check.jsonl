@@ -1,0 +1,2 @@
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Verify flutter test + flutter build web green; no analyze run."}
+{"file": ".trellis/tasks/06-13-ui-polish-smoother-and-more-polished-transition-animations/prd.md", "reason": "Verify NON-revert parts of that task (AppMotion tokens, modal/dialog motion, list stagger, indicator pill) are unchanged — only the body AnimatedSwitcher comes out."}

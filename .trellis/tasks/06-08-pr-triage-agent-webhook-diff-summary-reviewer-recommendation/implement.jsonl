@@ -1,0 +1,7 @@
+{"file": ".trellis/spec/backend/directory-structure.md", "reason": "Where to place new handler/trigger/flow/service code in functions/src/; this task adds a flow + extends a handler + adds a githubClient method."}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Firestore paths (apps/gitsync/repos/{repoId}/pullRequests/{n}, users/{uid}), idempotency patterns, and type-strict query rules for the githubLogin → userId lookup."}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "Webhook handler conventions (HMAC verify, idempotency via x-github-delivery), HttpsError vs background-trigger error handling, and the try/catch policy around Discord/LLM outages."}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "v2-only Functions, region, forbidden patterns — the new trigger must follow these."}
+{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "Use firebase-functions structured logger, not console.*; required for the new flow and webhook branch."}
+{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "jest + ts-jest patterns; existing __tests__/onCommitCreated.test.ts and onTaskUpdated.test.ts show how to mock getOpenAI and nock GitHub — the new triagePr flow follows the same shape."}
+{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "We are reusing tools/discordNotify.ts (currently unused) and extending services/githubClient.ts. The guide enforces the 'search first' habit before adding new helpers."}

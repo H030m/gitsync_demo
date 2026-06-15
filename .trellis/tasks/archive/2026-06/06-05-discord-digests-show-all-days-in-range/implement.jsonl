@@ -1,0 +1,3 @@
+{"file": ".trellis/tasks/06-05-discord-digests-show-all-days-in-range/prd.md", "reason": "root cause + per-day digest list requirements"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "VM conventions"}
+{"file": ".trellis/spec/frontend/hook-guidelines.md", "reason": "repository + fake parity conventions"}

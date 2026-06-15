@@ -1,0 +1,6 @@
+{"file": "functions/src/tools/agentTrace.ts", "reason": "Extend AgentFlow union with discordChat/explainCommit/editDiscordDigest; add TRACE_LABELS for listDaySummaries/getDaySummary/listNeighborCommits/writeExplanation/writeDigest"}
+{"file": "lib/view_models/agent_trace_mixin.dart", "reason": "New shared mixin: flow-prefixed runId generation, agentRuns subscription, liveSteps exposure, begin/endTrace — folds the per-VM boilerplate AskRepoViewModel did inline"}
+{"file": "lib/services/functions_service.dart", "reason": "Add optional runId to explainCommit/discordChat/editDiscordDigest (abstract + live impl payloads)"}
+{"file": "lib/services/fake/fake_functions_service.dart", "reason": "Add runId params to the three fakes; bump explainCommit/discordChat fake latency to *5 so the canned trace plays through"}
+{"file": "lib/repositories/fake/fake_agent_run_repo.dart", "reason": "Per-runId-prefix canned step sequences (handoff-/chat-/explain-/editdigest-) so demo trace lines match the flow being watched"}
+{"file": "lib/views/ask/ask_repo_chat.dart", "reason": "Reuse the existing AskRepoLiveTraceStrip widget across the three new screens (no change; reference)"}

@@ -1,0 +1,65 @@
+1. 核心邏輯漏洞與修正方案
+1.1 任務拆解（Flow 1）Zod Schema 與 TypeScript 型別矛盾
+錯誤反駁：在 §5.1 的 Zod Schema 定義中：
+
+TypeScript
+export const SubTaskSchema = z.object({
+  // ...
+  dependsOn: z.array(z.string()).describe("Titles of subtasks that this task explicitly depends on")
+});
+這裡明確定義 dependsOn 是一個儲存子任務標題（title: string）的字串陣列。
+然而，在同一章節的最上方，你定義的 Flow 輸出 Contract 卻寫著：
+
+Output: { subtasks: [{ title, description, dependsOn: number[], estimatedHours }] }
+
+同時在 §2.1 的 Firestore Schema 中，tasks/{taskId}.dependsOn 則是設計用來儲存 taskId 陣列（taskId: string[]）。
+
+致命後果：當 AI Agent 剛生成完這批子任務時，這 5 個子任務在資料庫裡根本還沒有建立，也還沒有隨機產生的 taskId。此時 AI 唯一能拿來標記依賴關係的，只有它自己剛剛想出來的 title。如果直接把 title[] 當成 taskId[] 寫入 Firestore，前端在用 dependsOn 組任務關聯圖時會直接發生 Null Pointer 崩潰（因為找不到對應 ID 的節點）。
+
+修正方案：在 breakdownTaskFlow 內部，AI 輸出符合 Zod Schema 的 title[] 後，後端必須執行一個「兩階段 ID 映射轉換」。修改 §5.1 的 Steps 實作邏輯：
+
+Step 4 (ID Pre-generation)：拿到 AI 的 JSON 後，用程式碼遍歷一遍，用 db.collection('tasks').doc().id 為每個子任務預先產生（Pre-generate）一個 Firestore taskId。
+
+Step 5 (Dependency Mapping)：建立一個 Map<String, String>（Task_Title -> Pre_Generated_TaskId）。
+
+Step 6 (Translation)：遍歷 dependsOn 陣列，把裡面的 Title 字串全部替換成對應的 Pre_Generated_TaskId。完成後再透過 Transaction 批次寫入 Firestore。
+
+1.2 onTaskUpdated Trigger 的反向依賴查詢（Fan-out）索引缺失
+技術漏洞：在 §4.3 的 Firestore Triggers 中定義了：
+
+onTaskUpdated: 若 status 變 "done"：發 FCM 給下游 (dependsOn 反向查)
+
+工程盲點：當 Task_A 被標記為 done 時，系統需要找出「有哪些其他 Task 正在等待 Task_A 完成」。這需要發起一個查詢：
+
+TypeScript
+db.collection(`apps/gitsync/repos/${repoId}/tasks`).where('dependsOn', 'array-contains', taskA_Id);
+在 Firestore 中，對 Subcollection 進行 array-contains 查詢需要建立對應的複合索引。如果在此時沒有提早規劃，當 Trigger 併發跑起來時，會因為找不到索引而直接拋出 FirebaseError: The query requires an index. 導致 Trigger 崩潰，下游卡片永遠不會被喚醒。
+
+修正方案：在 §5.6 (Vector Search 索引與預過濾) 章節中，補上 tasks 反向查詢所需的常規複合索引（Composite Index）規範：
+
+Bash
+# tasks 反向查詢依賴鏈必備索引
+gcloud firestore indexes composite create \
+  --collection-group=tasks \
+  --query-scope=COLLECTION \
+  --field-config field-path=dependsOn,array-config=CONTAINS \
+  --field-config field-path=status,order=ASCENDING
+1.3 簡化版 Discord Inbound 的使用者身份識別缺失（斷鏈風險）
+設計缺失：在 §7.2 中，discordMessageIngest 接收並寫入 discordMessages/{messageId} 文件時，欄位只抓取了 Discord 端的 authorId 與 authorName。
+
+邏輯斷鏈：當 Flow 3 (generateHandoffFlow) 啟動，AI 調用 searchDiscordMessages 撈出與本任務相關的討論時，AI 看到的是 authorName: "johndoe123"。但 AI 在查閱專案成員（§2.1 members/{userId}）時，看到的是 Firebase Auth UID（如 WvK9x...）或 githubLogin: "john-developer"。系統目前沒有任何地方儲存「Discord User ID」與「Firebase/GitHub User ID」的對照表。
+
+後果：AI 在生成技術交接文件（Handoff Doc）時，無法把對話中的人名與真實程式碼的貢獻者（Commits Author）對齊，導致它寫出的交接報告會出現人名張冠李戴、或是無法精確指名下游對接工程師。
+
+修正方案：在 apps/gitsync/users/{userId} 的 Schema 中，必須新增一個選填欄位：discordUserId: string?（可在 App 的設置頁面讓使用者填入其 Discord 18 位數 ID），並在 readTeamState tool 中將此對照關係一併餵給 AI Agent。
+
+2. 最終優化確認清單（開發前對齊）
+請在隊員正式開工（Sprint 1）前，口頭或在筆記中補上這三個技術修正：
+
+[x] ID 映射轉譯：確定 breakdownTaskFlow 寫入 Firestore 之前，會把 AI 回傳的 dependsOn: Title[] 轉成 dependsOn: taskId[]。
+
+[x] 補上 Tasks 索引：確保隊員 C 在設定 Firestore Rules 與 Index 時，把 tasks 的 dependsOn array-contains 索引建好。
+
+[x] 身份對照綁定：在 User Schema 補上 discordUserId，讓被動收集進來的 Discord 聊天記錄能真正與專案成員完成語義對齊。
+
+這份架構設計文件在歷經多輪極限打磨後，目前的技術細節、防禦代碼與邊界緩解措施已經非常完善。這份文件已經可以作為 National Tsing Hua University 團隊開工的最高指導原則（Source of Truth），祝你們團隊 Sprint 1 順利破局！

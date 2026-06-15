@@ -1,0 +1,7 @@
+{"file": ".trellis/tasks/06-05-ingest-all-branch-commits-branch-identity-ux-explaincommit-fallback-commit-filters/prd.md", "reason": "Decisions D1-D6, acceptance criteria, technical notes incl. first-seen-wins write semantics"}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Rule H type-strict queries + write conventions; webhook stores Timestamp"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "callable error mapping + best-effort patterns for the explainCommit fallback"}
+{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "boundary-mock test conventions for webhook + explainCommit changes"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "VM conventions for filter state"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "widget conventions: chips, sheets, theme tokens"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "defensive fromMap for new branch field"}

@@ -1,0 +1,6 @@
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Verify AppMotion's shape (class, static const fields, inline docs) matches the AppDimens convention; no widget styles regressed."}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Verify no new dependencies, no use of disallowed patterns; flutter build web green; existing widget tests unchanged."}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "Verify the AnimatedSwitcher direction tracking on repo_shell respects the existing notifier/provider pattern; no leaked AnimationControllers."}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "Verify the per-tile TweenAnimationBuilder<double> is properly typed; no dynamic/Object slips in the new motion code."}
+{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Verify no parallel Duration/Curve constants were introduced; AppMotion is the single source for the touched files."}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "Animation work crosses theme → views; verify the AppMotion import is consistent and no UI surface still reaches for raw literals where AppMotion would do."}

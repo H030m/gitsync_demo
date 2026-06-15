@@ -1,0 +1,26 @@
+{
+  "name": "gitsync-discord-bot",
+  "version": "0.0.1",
+  "private": true,
+  "description": "GitSync forwarder bot: captures Discord messages and POSTs them to the discordMessageIngest Cloud Function. Runs separately from the Firebase Functions repo (ARCHITECTURE.md §7.2).",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start:dev": "tsx src/index.ts",
+    "probe": "tsx src/probe.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "tsx": "^4.19.2",
+    "@types/node": "^22.9.0"
+  }
+}

@@ -1,0 +1,2 @@
+{"file": ".trellis/tasks/06-05-fix-clear-range-must-not-overwrite-discord-backfill-range/prd.md", "reason": "regression root cause + fix"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "VM conventions"}

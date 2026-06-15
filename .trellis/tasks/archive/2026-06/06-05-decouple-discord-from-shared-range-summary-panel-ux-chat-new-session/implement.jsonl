@@ -1,0 +1,3 @@
+{"file": ".trellis/tasks/06-05-decouple-discord-from-shared-range-summary-panel-ux-chat-new-session/prd.md", "reason": "incident background, D1-D3 decisions, requirements, AC, recovery runbook"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "VM conventions"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "widget conventions"}

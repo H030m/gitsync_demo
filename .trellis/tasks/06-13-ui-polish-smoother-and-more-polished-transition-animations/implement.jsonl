@@ -1,0 +1,5 @@
+{"file": ".trellis/spec/frontend/directory-structure.md", "reason": "Confirms lib/theme/ as the home for app-wide tokens (where AppMotion belongs, mirroring AppDimens); confirms views/ layout for the touched files."}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Establishes the centralized-theme + AppDimens token convention that AppMotion must mirror exactly; also documents EmptyState/SegmentedButton patterns we should not regress."}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Lint + analyze conventions; importantly, the note that flutter analyze crashes on CJK repo paths so we cannot rely on it for verification."}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "repo_shell.dart manages tab state; the AnimatedSwitcher key + direction tracking must respect existing state-management patterns (Riverpod/notifier) without leaking AnimationController lifecycles."}
+{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Pre-modification rule: before adding AppMotion, grep for existing Duration/Curve usage; when swapping literals in touched files, sweep them all (search-first habit)."}

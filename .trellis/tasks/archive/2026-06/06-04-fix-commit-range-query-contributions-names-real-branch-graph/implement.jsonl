@@ -1,0 +1,10 @@
+{"file": ".trellis/tasks/06-04-fix-commit-range-query-contributions-names-real-branch-graph/prd.md", "reason": "Full requirements, ADR-lite decisions D1-D4, acceptance criteria, ordered implementation plan"}
+{"file": ".trellis/tasks/06-04-fix-commit-range-query-contributions-names-real-branch-graph/research/flutter-git-graph-rendering.md", "reason": "Chosen rendering approach: ListView + per-row CustomPaint, active-lanes algorithm, row model sketch"}
+{"file": ".trellis/tasks/06-04-fix-commit-range-query-contributions-names-real-branch-graph/research/github-api-commit-graph.md", "reason": "Chosen backend approach: single GraphQL query, cache TTL, payload schema, PR-number detection"}
+{"file": ".trellis/spec/backend/index.md", "reason": "Backend (functions) spec index — conventions for new callable getCommitGraph"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "Error handling conventions for the new callable and GitHub API failures"}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Firestore access conventions for report-doc schema addition and cache doc"}
+{"file": ".trellis/spec/frontend/index.md", "reason": "Frontend (Flutter) spec index"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "ViewModel conventions for CommitsViewModel toggle + graph fetch state"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Widget conventions for the branch-graph view and contributions card changes"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "Model parsing conventions for new graph payload and enriched memberContributions"}

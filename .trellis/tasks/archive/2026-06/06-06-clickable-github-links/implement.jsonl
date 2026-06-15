@@ -1,0 +1,2 @@
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "View rules: no repo import in View (use a VM), colorScheme/AppDimens, async+mounted — for RepoViewModel + tappable chips"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "provider + ChangeNotifier VM conventions for the new RepoViewModel + shell provider"}

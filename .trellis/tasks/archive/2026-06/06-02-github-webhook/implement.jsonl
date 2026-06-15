@@ -1,0 +1,6 @@
+{"file": ".trellis/spec/backend/directory-structure.md", "reason": "handlers/ vs triggers/ vs services/ vs tools/ split; webhook handler + new onIssueWritten trigger placement; githubClient is the only place for GitHub API calls."}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "Webhook verify-first then 401/400/200-dup/200; HttpsError unused here (HTTP codes); Rule D (slow OpenAI/GitHub calls outside idempotency txn); best-effort pattern for issue mirroring."}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "Firestore paths (commits/pullRequests/issues subcollections), FieldValue.increment for counters, runTransaction with in-txn idempotent read for onPRMerged, FieldValue.vector for embeddings."}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "v2-only, region, OpenAI structured/embedding via config MODELS, .beta.parse path, no inline secrets/model names, idempotency on every trigger."}
+{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "Structured logger for webhook dispatch + each trigger step."}
+{"file": ".trellis/spec/backend/testing-guidelines.md", "reason": "jest + ts-jest boundary mocking for onRequest webhook (mock crypto verify, Firestore) and triggers (mock OpenAI, Octokit, Firestore)."}

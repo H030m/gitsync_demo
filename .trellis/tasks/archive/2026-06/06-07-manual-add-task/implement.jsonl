@@ -1,0 +1,2 @@
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "View rules: Consumer/Provider VM access, async+mounted guards, colorScheme, NavigationService"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "reading TasksBoardViewModel via Provider in the View"}

@@ -1,0 +1,4 @@
+{"file": "functions/src/flows/discordChat.ts", "reason": "Add runId input; collapse loop to a single return path; startRun + appendStep per tool round + composing step + finishRun(done/error) in try/catch"}
+{"file": "functions/src/handlers/discordChat.ts", "reason": "Accept and validate runId (same regex as other callables); forward to the flow"}
+{"file": "lib/view_models/discord_chat_vm.dart", "reason": "Mix in AgentTraceMixin; newRunId('chat-'), beginTrace before the call, pass runId, endTrace in finally; dispose tears it down"}
+{"file": "lib/views/daily/daily_view_page.dart", "reason": "Discord chat box renders AskRepoLiveTraceStrip(vm.liveSteps) as the in-flight item, replacing the generic _ThinkingBubble (now removed)"}

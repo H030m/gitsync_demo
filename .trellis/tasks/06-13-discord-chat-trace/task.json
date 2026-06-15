@@ -1,0 +1,32 @@
+{
+  "id": "discord-chat-trace",
+  "name": "discord-chat-trace",
+  "title": "discordChat 接 agent live trace（已 agentic，最小改動）",
+  "description": "discordChat flow 已是真正的 tool loop（listDaySummaries/getDaySummary/searchDiscordMessages），只缺 trace。接上 agentTrace：handler 收 runId、flow 每輪 tool round 寫 appendStep、收尾 finishRun，並在 discord 問答畫面顯示 AskRepoLiveTraceStrip。",
+  "status": "done",
+  "dev_type": "feature",
+  "scope": "functions+flutter",
+  "package": "gitsync",
+  "priority": "P1",
+  "creator": "claude-opus",
+  "assignee": "claude-opus",
+  "createdAt": "2026-06-13",
+  "completedAt": "2026-06-13",
+  "branch": "feat/agent-trace-fanout",
+  "base_branch": "feature/agentic-final-demo",
+  "worktree_path": null,
+  "commit": null,
+  "pr_url": null,
+  "subtasks": [],
+  "children": [],
+  "parent": null,
+  "relatedFiles": [
+    "functions/src/flows/discordChat.ts",
+    "functions/src/handlers/discordChat.ts",
+    "functions/src/tools/agentTrace.ts",
+    "lib/view_models/discord_chat_vm.dart",
+    "lib/views/daily/daily_view_page.dart"
+  ],
+  "notes": "依賴 06-13-agent-trace-fanout。實作：flow 收斂成單一 return path（確保 finishRun 必跑）、每輪 tool round appendStep、收尾 finishRun；handler 收+驗 runId；discord 問答畫面以 AskRepoLiveTraceStrip 取代 _ThinkingBubble。runId 前綴 'chat-'。",
+  "meta": {}
+}

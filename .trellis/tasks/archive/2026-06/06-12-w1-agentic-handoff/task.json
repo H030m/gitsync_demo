@@ -1,0 +1,40 @@
+{
+  "id": "w1-agentic-handoff",
+  "name": "w1-agentic-handoff",
+  "title": "W1 agentic handoff upgrade: two-phase generateHandoffFlow (drafting tool loop + self-review) replacing the one-shot prefetch",
+  "description": "Rewrite generateHandoffFlow from deterministic prefetch + one mini-model call into a two-phase agent. Phase 1: gpt-4o tool loop (tool_choice auto, max 4 rounds) over read-only tools (listRelatedCommits, getCommitDiff NEW, searchDiscordMessages, searchPastCommits, readRepoPlanningDocs, readTeamState) terminating in draftHandoff(markdown). Phase 2: gpt-4o-mini reviewer (zod {score 1-5, gaps[]}) judging the draft against the task's acceptanceCriteria + description; score>=4 finalizes, score<4 with total rounds<5 re-injects gaps and loops back to Phase 1, hard stop at total rounds 5 forces draftHandoff. Add a minimal githubClient diff method (per-file patch, truncated ~3000 tokens/commit). Preserve cache semantics (force flag), onTaskUpdated best-effort trigger path, and result shape {handoffMarkdown, cached}. Persist review metadata (rounds, score) on the task doc.",
+  "status": "completed",
+  "dev_type": "backend",
+  "scope": null,
+  "package": "functions",
+  "priority": "P1",
+  "creator": "gitsync",
+  "assignee": "gitsync",
+  "createdAt": "2026-06-12",
+  "completedAt": "2026-06-12",
+  "branch": "feat/w1-agentic-handoff",
+  "base_branch": "feature/agentic-final-demo",
+  "worktree_path": "C:/Users/a0905/work/ssfinal/gitsync-w1",
+  "commit": null,
+  "pr_url": null,
+  "subtasks": [],
+  "children": [],
+  "parent": null,
+  "relatedFiles": [
+    "functions/src/flows/generateHandoff.ts",
+    "functions/src/prompts/generateHandoff.ts",
+    "functions/src/services/githubClient.ts",
+    "functions/src/tools/handoffTools.ts",
+    "functions/src/types.ts",
+    "functions/src/triggers/onTaskUpdated.ts",
+    "functions/src/__tests__/generateHandoff.test.ts"
+  ],
+  "notes": "IMPLEMENTED (Q1-Q6 all RESOLVED in prd.md). Two-phase agentic generateHandoffFlow: Phase 1 gpt-4o tool loop (listRelatedCommits/getCommitDiff NEW/searchDiscordMessages/searchPastCommits/readRepoPlanningDocs/readTeamState + draftHandoff terminal), Phase 2 gpt-4o-mini reviewer (HandoffReviewSchema {score,gaps}) re-injecting gaps into the shared thread. NEW githubClient.getCommitDiff (per-file patch, truncated 12000 chars; getCommit untouched). NEW tools/handoffTools.ts. resolveRepoContext exported from repoDocs.ts (Q2, no dup). handoffReview={score,rounds,generatedAt} persisted best-effort. Cache/force semantics + result shape + onTaskUpdated trigger path unchanged. Gates green: typecheck 0, jest 34 suites/258 tests (was 33/250, all baseline preserved), lint 0. Orchestrator to close. Merge note: generateHandoff.ts + prompts/generateHandoff.ts are W3 touch points (projectBrief context prefix) — coordinate before merge.",
+  "meta": {
+    "workItem": "W1",
+    "phase": "done",
+    "reviewedBy": "Fable 5 (orchestrator) — final review passed 2026-06-12",
+    "baseline": "typecheck 0 errors; jest 33 suites / 250 tests green",
+    "result": "typecheck 0 errors; jest 34 suites / 258 tests green; lint 0 errors"
+  }
+}

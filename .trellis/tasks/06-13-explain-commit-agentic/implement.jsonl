@@ -1,0 +1,8 @@
+{"file": "functions/src/flows/explainCommit.ts", "reason": "Rewrite the doc path as an agentic tool loop (searchDiscordMessages/listNeighborCommits/getCommitDiff -> writeExplanation), accept plain-content as terminal, ROUNDS_CAP=4/MAX_TOOL_CALLS=6, runId trace; keep workSummary cache + single-shot GitHub fallback"}
+{"file": "functions/src/prompts/explainCommit.ts", "reason": "Agentic system prompt + seed-context builder (commit + linked tasks only; neighbors/Discord come via tools); separate single-shot fallback prompt/context"}
+{"file": "functions/src/handlers/explainCommit.ts", "reason": "Accept + validate runId; forward to the flow"}
+{"file": "functions/src/tools/handoffTools.ts", "reason": "Reuse getCommitDiff as the commit-diff tool (no change)"}
+{"file": "functions/src/tools/discordSearch.ts", "reason": "Reuse searchDiscordMessages for related-discussion retrieval (no change)"}
+{"file": "functions/src/__tests__/explainCommit.test.ts", "reason": "Rewrite to scripted tool-loop OpenAI mock; mock handoffTools (keeps @octokit/rest out) + discordSearch; add a test asserting neighbor+Discord tool results feed the write turn"}
+{"file": "lib/view_models/commits_vm.dart", "reason": "Mix in AgentTraceMixin; newRunId('explain-'), beginTrace, pass runId in explain(), endTrace in finally; dispose tears it down"}
+{"file": "lib/views/daily/daily_view_page.dart", "reason": "Commit detail sheet shows AskRepoLiveTraceStrip(vm.liveSteps) while explaining, replacing the bare spinner"}

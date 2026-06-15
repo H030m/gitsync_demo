@@ -1,0 +1,38 @@
+{
+  "id": "w2-semantic-search",
+  "name": "w2-semantic-search",
+  "title": "W2 semantic search upgrade: Discord embedding + vector-first search (commits & Discord) + embedding backfill",
+  "description": "Upgrade all agent retrieval from keyword to vector-first with keyword fallback. W2a: implement the embedding step in onDiscordMessageCreated (copy onCommitCreated pattern). W2b: searchDiscordMessages vector-first (findNearest/COSINE) with keyword+recency fallback, return shape unchanged. W2c: unify searchPastCommits to vector-first, keyword fallback. W2d: one-off backfillEmbeddings({repoId, collection}) callable, idempotent, batched.",
+  "status": "completed",
+  "dev_type": "backend",
+  "scope": null,
+  "package": "functions",
+  "priority": "P1",
+  "creator": "gitsync",
+  "assignee": "gitsync",
+  "createdAt": "2026-06-12",
+  "completedAt": "2026-06-12",
+  "branch": "feat/w2-semantic-search",
+  "base_branch": "feature/agentic-final-demo",
+  "worktree_path": "C:/Users/a0905/work/ssfinal/gitsync-w2",
+  "commit": null,
+  "pr_url": null,
+  "subtasks": [],
+  "children": [],
+  "parent": null,
+  "relatedFiles": [
+    "functions/src/triggers/onDiscordMessageCreated.ts",
+    "functions/src/tools/discordSearch.ts",
+    "functions/src/tools/dailyIntel.ts",
+    "functions/src/tools/embedding.ts",
+    "functions/src/handlers/backfillEmbeddings.ts",
+    "functions/src/index.ts",
+    "firestore.indexes.json"
+  ],
+  "notes": "Implemented W2a–W2d per prd + Fable 5 rulings (Q1–Q5 resolved in prd.md). Gates green: typecheck 0 errors, jest 32 suites / 236 tests (was 29/211), lint 0 errors. No index/dep/deploy changes. Orchestrator to close.",
+  "meta": {
+    "workItem": "W2",
+    "phase": "done",
+    "reviewedBy": "Fable 5 (orchestrator) — final review passed 2026-06-12"
+  }
+}

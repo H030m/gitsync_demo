@@ -1,0 +1,2 @@
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "View rules (no repo import, colorScheme/AppDimens, async+mounted, NavigationService), graphview legend, scrolling/scrollbar pitfalls"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "VM access via Provider for dependency editing + delete"}

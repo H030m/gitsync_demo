@@ -1,0 +1,6 @@
+node_modules/
+lib/
+.secret.local
+.runtimeconfig.json
+coverage/
+*.log

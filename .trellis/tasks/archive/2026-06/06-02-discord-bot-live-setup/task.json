@@ -1,0 +1,32 @@
+{
+  "id": "discord-bot-live-setup",
+  "name": "discord-bot-live-setup",
+  "title": "Invite and run Discord forwarder bot on live server",
+  "description": "Operational setup of the existing discord-bot/ forwarder: create the Discord application, invite the bot to the team server (guild install, minimal read-only perms), fill discord-bot/.env, and run it end-to-end so messages from mapped channels land in Firestore. Code already exists (task 06-02-discord-forwarder-bot-and-message-ingest); this task is config + deploy only, no code changes expected.",
+  "status": "completed",
+  "dev_type": "ops",
+  "scope": "discord-bot",
+  "package": null,
+  "priority": "P2",
+  "creator": "gitsync",
+  "assignee": "gitsync",
+  "createdAt": "2026-06-02",
+  "completedAt": "2026-06-02",
+  "branch": null,
+  "base_branch": "discord",
+  "worktree_path": null,
+  "commit": null,
+  "pr_url": null,
+  "subtasks": [],
+  "children": [],
+  "parent": null,
+  "relatedFiles": [
+    "discord-bot/.env.example",
+    "discord-bot/src/config.ts",
+    "discord-bot/src/index.ts",
+    "discord-bot/README.md",
+    "functions/.secret.local.example"
+  ],
+  "notes": "Discord application client_id: 1511330041709985792. Install type: Guild Install (integration_type=0). Bot needs only View Channels (1<<10) + Read Message History (1<<16) = permissions 66560; plus Message Content Intent enabled in the Bot tab. User's generated invite URL had 2 extra perms (Send Messages, Create Public Threads, permissions=34359806976) - harmless but not needed. Firebase project id: gitsync-645b3, region asia-east1. DISCORD_INGEST_SECRET must match between discord-bot/.env and the Cloud Function (functions/.secret.local for emulator, Secret Manager for prod).",
+  "meta": {}
+}

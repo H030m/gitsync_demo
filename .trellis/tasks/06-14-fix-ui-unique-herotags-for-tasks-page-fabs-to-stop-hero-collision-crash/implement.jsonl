@@ -1,0 +1,2 @@
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Confirms widget-property change conventions; the heroTag is the only addition per FAB."}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "flutter build web is the truth signal; analyze skipped on CJK path."}

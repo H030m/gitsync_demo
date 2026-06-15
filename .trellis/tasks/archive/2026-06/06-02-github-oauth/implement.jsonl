@@ -1,0 +1,6 @@
+{"file": ".trellis/spec/frontend/index.md", "reason": "Frontend overview: lib/ layout, services/repositories/view_models split"}
+{"file": ".trellis/spec/frontend/directory-structure.md", "reason": "Where services/auth, repositories, view_models, tests live"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "ChangeNotifier + provider conventions — auth_vm pattern + how to fake services in tests"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "model + Firestore Timestamp conventions — relevant to the createdAt-on-create fix"}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "flutter analyze bar + testing expectations for this layer"}
+{"file": ".trellis/spec/guides/git-workflow.md", "reason": "branch/commit/merge rules for Phase 3.4 (feature/* <- develop)"}

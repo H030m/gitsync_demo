@@ -1,0 +1,12 @@
+# This file configures the analyzer, which statically analyzes Dart code to
+# check for errors, warnings, and lints.
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    # Disabled: conflicts with the course MVVM pattern where ViewModels use
+    # the constructor body to wire up stream subscriptions BEFORE assigning
+    # the private field via an initializer list. Also conflicts with the
+    # Model pattern of private `_createdAt` field + public getter falling
+    # back to `Timestamp.now()` (COURSE_METHODS.md §4.1).
+    prefer_initializing_formals: false

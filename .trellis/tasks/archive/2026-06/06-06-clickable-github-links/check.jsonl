@@ -1,0 +1,2 @@
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "flutter analyze + never-commit rules to verify the change"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "verify View-layer rules (no repo import, mounted guards, colorScheme)"}

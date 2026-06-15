@@ -1,0 +1,5 @@
+{"file": ".trellis/tasks/06-05-unified-date-range-collapsible-per-day-report-cards/prd.md", "reason": "Decisions D1-D3, requirements, AC, technical notes with file pointers"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "shared ChangeNotifier + ProxyProvider conventions"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "widget/theme conventions, async+mounted"}
+{"file": ".trellis/spec/frontend/hook-guidelines.md", "reason": "repository conventions for the new range stream + Fake parity"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "defensive parsing conventions"}

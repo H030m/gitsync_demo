@@ -1,0 +1,7 @@
+{"file": ".trellis/spec/frontend/directory-structure.md", "reason": "Confirms lib/router/ is the home for routing concerns — shell_transitions.dart lives there beside app_router.dart."}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Establishes the AppMotion + centralized-theme conventions the new shell_transitions helper must respect."}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "flutter build web is the truth signal; flutter analyze is intentionally skipped on this repo's CJK path."}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "The mutable _ShellNavSignal is module-level state; the spec's stance on globals vs notifiers should be respected and the deviation documented inline."}
+{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "Pre-modification rule: before adding a new transition helper, confirm no existing one exists; AppMotion tokens are the single source for duration + curve."}
+{"file": ".trellis/tasks/06-13-revert-animatedswitcher-bottom-nav-swap-globalkey-duplication-crash/prd.md", "reason": "Establishes the GlobalKey crash this task is preventing — required context for why the per-route architecture is mandatory."}
+{"file": ".trellis/tasks/06-13-ui-polish-smoother-and-more-polished-transition-animations/prd.md", "reason": "Establishes the original polish contract — same visual goal (shared-axis slide, ±0.06 offset, AppMotion.nav timing, emphasized curve) must be matched."}

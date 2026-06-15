@@ -1,0 +1,4 @@
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "verify flutter analyze clean + testing bar"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "verify auth_vm + service abstraction conventions followed"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "verify createdAt-on-create fix matches the model/Timestamp contract"}
+{"file": ".trellis/spec/guides/git-workflow.md", "reason": "commit convention for Phase 3.4"}

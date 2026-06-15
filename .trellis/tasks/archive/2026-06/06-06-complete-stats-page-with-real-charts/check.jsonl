@@ -1,0 +1,3 @@
+{"file": ".trellis/tasks/06-06-complete-stats-page-with-real-charts/prd.md", "reason": "chart scope + data derivations"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "ProxyProvider conventions"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "theme/widget conventions"}
