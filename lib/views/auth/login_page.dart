@@ -89,3 +89,5 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
+// [feat] 登入/註冊：Email 註冊、登入、登出並保存目前使用者，含重複註冊與查無帳號提示。
