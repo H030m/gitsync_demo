@@ -1,0 +1,27 @@
+{
+  "id": "home-darkmode",
+  "name": "home-darkmode",
+  "title": "設計首頁與深色模式",
+  "description": "App 首頁作為各功能入口，並提供亮色 / 深色主題切換。",
+  "status": "done",
+  "dev_type": "feature",
+  "scope": "frontend",
+  "package": null,
+  "priority": "P3",
+  "creator": "demo",
+  "assignee": "前端",
+  "createdAt": "2026-06-15",
+  "completedAt": "2026-06-15",
+  "branch": null,
+  "base_branch": "main",
+  "subtasks": [],
+  "children": [],
+  "parent": null,
+  "relatedFiles": [
+    "lib/views/home/home_page.dart",
+    "lib/theme/app_theme.dart"
+  ],
+  "dependsOn": [],
+  "notes": "",
+  "meta": {}
+}
